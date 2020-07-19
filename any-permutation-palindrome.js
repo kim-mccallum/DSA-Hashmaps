@@ -49,4 +49,8 @@ let permutationContainsPalindrome = (string) => {
   return outBool;
 };
 
-console.log(permutationContainsPalindrome("acecarr"));
+// console.log(permutationContainsPalindrome("acecarr"));
+
+module.exports = {
+  anagrams,
+};
