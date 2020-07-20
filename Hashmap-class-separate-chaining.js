@@ -1,3 +1,5 @@
+const { LinkedList } = require("./Single-linked-list");
+
 class HashMap {
   constructor(initialCapacity = 8) {
     this.length = 0;
@@ -43,15 +45,14 @@ class HashMap {
     this.length--;
     this._deleted++;
   }
-
+  // change this to implement separate chaining!
   _findSlot(key) {
     const hash = HashMap._hashString(key);
     const start = hash % this._capacity;
-    // look for a place by looping over start to end
+
     for (let i = start; i < start + this._capacity; i++) {
       const index = i % this._capacity;
       const slot = this._hashTable[index];
-      // if you find an available slot, put return the available index
       if (slot === undefined || (slot.key === key && !slot.DELETED)) {
         return index;
       }
